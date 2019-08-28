@@ -31,10 +31,10 @@ module.exports = {
     },
 
     async index(req, res){
-        const {user} = req.headers;
-
+        const {user} = req.headers;        
+        console.log("user: ",  user)
         const loggerUser = await Dev.findById(user);
-
+        console.log("loggerUser: ",  loggerUser)
         const users = await Dev.find({
             $and:[
                 {_id: {$ne: user}},
