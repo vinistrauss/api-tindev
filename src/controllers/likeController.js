@@ -23,7 +23,6 @@ module.exports = {
         console.log('loggedDev: ', loggedDev)
         console.log('targetDev: ', targetDev)
 
-        console.log('argetDev.likes.includes(loggedDev._id): ', argetDev.likes.includes(loggedDev._id))
 
         if(targetDev.likes.includes(loggedDev._id) || targetDev.superlikes.includes(loggedDev._id)){
             const loggedSocket = req.connectedUsers[user];
