@@ -44,4 +44,4 @@ app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-server.listen("https://api-tindev-node.herokuapp.com/");
+server.listen(process.env.PORT || 3333);
