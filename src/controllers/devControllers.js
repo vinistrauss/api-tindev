@@ -32,16 +32,19 @@ module.exports = {
 
     async index(req, res){
         const {user} = req.headers;        
-        console.log("user: ",  user)
+        //console.log("user: ",  user)
         const loggerUser = await Dev.findById(user);
-        console.log("loggerUser: ",  loggerUser)
         const users = await Dev.find({
             $and:[
                 {_id: {$ne: user}},
                 {_id: {$nin: loggerUser.likes}},
                 {_id: {$nin: loggerUser.dislikes}},
+                {_id: {$nin: loggerUser.superlikes}}
             ]
         })
+
+        console.log("loggerUser: ",  loggerUser)
+
 
         return res.json(users);
     }

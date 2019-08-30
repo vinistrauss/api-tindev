@@ -20,8 +20,8 @@ module.exports = {
             return res.status(400).json({error:'dev not exists'})
         }
 
-        console.log('loggedDev: ', loggedDev)
-        console.log('targetDev: ', targetDev)
+        // console.log('loggedDev: ', loggedDev)
+        // console.log('targetDev: ', targetDev)
 
 
         if(targetDev.likes.includes(loggedDev._id) || targetDev.superlikes.includes(loggedDev._id)){
